@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace SSMKittel.StringDistance
 {
-    internal struct DString : IComparable<DString>, IEquatable<DString>
+    internal class DString : IComparable<DString>, IEquatable<DString>
     {
         public readonly string Value;
         private readonly ulong presence;
