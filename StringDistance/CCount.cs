@@ -14,7 +14,7 @@ namespace SSMKittel.StringDistance
             this.Count = count;
         }
 
-        public static Dictionary<char, CCount> Decompose(IEnumerable<char> str)
+        public static Dictionary<char, CCount> Decompose(string str)
         {
             var m = new Dictionary<char, ushort>();
             foreach (char chr in str)
