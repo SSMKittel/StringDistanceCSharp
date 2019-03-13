@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.421
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "StringDistance", "StringDistance\StringDistance.csproj", "{C11AD37E-4219-4DB1-BBC6-AA2075DA4555}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StringDistanceTest", "StringDistanceTest\StringDistanceTest.csproj", "{7CD87A2A-29BB-4BED-9CFF-FDC8835D4A71}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{C11AD37E-4219-4DB1-BBC6-AA2075DA4555}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C11AD37E-4219-4DB1-BBC6-AA2075DA4555}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C11AD37E-4219-4DB1-BBC6-AA2075DA4555}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C11AD37E-4219-4DB1-BBC6-AA2075DA4555}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7CD87A2A-29BB-4BED-9CFF-FDC8835D4A71}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7CD87A2A-29BB-4BED-9CFF-FDC8835D4A71}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7CD87A2A-29BB-4BED-9CFF-FDC8835D4A71}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7CD87A2A-29BB-4BED-9CFF-FDC8835D4A71}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {750F5938-FE16-4906-B07D-8261CC9CF0DB}
+	EndGlobalSection
+EndGlobal
