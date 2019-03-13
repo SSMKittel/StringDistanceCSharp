@@ -42,10 +42,10 @@ namespace SSMKittel.StringDistance
             string s1 = this.Value;
             string s2 = other.Value;
             // INFinite distance is the max possible distance
-            uint inf = (uint)(s1.Length + s2.Length);
+            int inf = s1.Length + s2.Length;
 
             // Create and initialize the character array indices
-            var da = new Dictionary<char, uint>();
+            var da = new Dictionary<char, int>();
 
             for (int d = 0; d < s1.Length; d++)
             {
@@ -58,16 +58,16 @@ namespace SSMKittel.StringDistance
             }
 
             // Create the distance matrix H[0 .. value.length+1][0 .. other.length+1]
-            uint[,] h = new uint[s1.Length + 2, s2.Length + 2];
+            int[,] h = new int[s1.Length + 2, s2.Length + 2];
 
             // initialize the left and top edges of H
-            for (uint i = 0; i <= s1.Length; i++)
+            for (int i = 0; i <= s1.Length; i++)
             {
                 h[i + 1, 0] = inf;
                 h[i + 1, 1] = i;
             }
 
-            for (uint j = 0; j <= s2.Length; j++)
+            for (int j = 0; j <= s2.Length; j++)
             {
                 h[0, j + 1] = inf;
                 h[1, j + 1] = j;
@@ -75,18 +75,18 @@ namespace SSMKittel.StringDistance
 
             // fill in the distance matrix H
             // look at each character in value
-            for (uint i = 1; i <= s1.Length; i++)
+            for (int i = 1; i <= s1.Length; i++)
             {
-                uint db = 0;
+                int db = 0;
 
                 // look at each character in b
-                for (uint j = 1; j <= s2.Length; j++)
+                for (int j = 1; j <= s2.Length; j++)
                 {
-                    uint i1 = da[s2[(int)j - 1]];
-                    uint j1 = db;
+                    int i1 = da[s2[j - 1]];
+                    int j1 = db;
 
-                    uint cost = 1;
-                    if (s1[(int)i - 1] == s2[(int)j - 1])
+                    int cost = 1;
+                    if (s1[i - 1] == s2[j - 1])
                     {
                         cost = 0;
                         db = j;
@@ -99,15 +99,15 @@ namespace SSMKittel.StringDistance
                             h[i1, j1] + (i - i1 - 1) + 1 + (j - j1 - 1));
                 }
 
-                da[s1[(int)i - 1]] = i;
+                da[s1[i - 1]] = i;
             }
 
-            return h[s1.Length + 1, s2.Length + 1];
+            return (uint) h[s1.Length + 1, s2.Length + 1];
         }
 
-        private static uint min(uint a, uint b, uint c, uint d)
+        private static int min(int a, int b, int c, int d)
         {
-            return Math.Min(a, Math.Min(b, Math.Min(c, d)));
+            return Math.Min(Math.Min(a, b), Math.Min(c, d));
         }
 
         public int CompareTo(DString other)
