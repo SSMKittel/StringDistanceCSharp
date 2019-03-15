@@ -1,0 +1,27 @@
+﻿<Window x:Class="GUI.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:GUI"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="596" Width="587">
+    <Grid>
+        <Label x:Name="label" Content="Threshold" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" />
+        <TextBox x:Name="textBox" Height="23" Margin="77,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top" RenderTransformOrigin="-0.606,0.077" HorizontalAlignment="Left" Width="50" Text="{Binding Threshold}" />
+
+        <Label x:Name="label1" Content="File" HorizontalAlignment="Left" Margin="10,41,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.682,0.606" />
+        <TextBox x:Name="fileBox" Margin="43,41,0,0" TextWrapping="Wrap" ToolTip="File" Height="23" VerticalAlignment="Top" HorizontalAlignment="Left" Width="430" Text="{Binding File}" />
+        <Button x:Name="button" Content="Browse" Margin="478,41,0,0" Height="20" VerticalAlignment="Top" HorizontalAlignment="Left" Width="75" Click="ChooseFile" />
+
+        <Button x:Name="computeButton" Content="Compute" HorizontalAlignment="Left" Margin="10,72,0,0" VerticalAlignment="Top" Width="75" RenderTransformOrigin="-0.069,-0.855" Click="ComputeMatches" />
+        <Label x:Name="computeTime" Margin="90,69,10,0" VerticalAlignment="Top"/>
+        <DataGrid x:Name="matchesGrid" Margin="10,97,10,10" AutoGenerateColumns="False">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="First" Binding="{Binding Item1}" Width="Auto" />
+                <DataGridTextColumn Header="Second" Binding="{Binding Item2}" Width="Auto" />
+                <DataGridTextColumn Header="Threshold" Binding="{Binding Item3}" Width="Auto" />
+            </DataGrid.Columns>
+        </DataGrid>
+    </Grid>
+</Window>
